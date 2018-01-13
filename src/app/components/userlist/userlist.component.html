@@ -1,0 +1,4 @@
+<div *ngIf="users">
+  <app-user *ngFor="let user of shownPages" [userData]="user" (updateEvent)="refresh()"></app-user>
+</div>
+<app-pagination *ngIf="size" [size]="size" (onReacted)="takeCurrentPage($event)"></app-pagination>

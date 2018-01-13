@@ -1,0 +1,21 @@
+a{
+    text-decoration: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    font-size: 21px;
+    vertical-align: middle;
+}
+a:hover{
+ color:mediumaquamarine;
+ text-decoration: none;
+}
+nav{
+    padding: 5px;
+    min-height: 75px;
+    background: linear-gradient(to bottom, #434343, #000000);  
+}
+a.active{
+    color:mediumaquamarine;
+}

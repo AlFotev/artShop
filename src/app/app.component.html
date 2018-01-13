@@ -1,0 +1,56 @@
+
+<nav>
+  <ul class="nav-fill" *ngIf="!authService.isLogged()">
+    <li class="navbar-text">
+      <a routerLink="/home" routerLinkActive="active">Начало</a>
+    </li>
+    <li class="navbar-text">
+      <a routerLink="/register" routerLinkActive="active">Регистрация</a>
+    </li>
+    <li class="navbar-text">
+      <a routerLink="/login" routerLinkActive="active">Вход</a>
+    </li>
+      <li class="navbar-text">
+        <a routerLink="/photography" routerLinkActive="active">Фотография</a>
+      </li>
+      <li class="navbar-text">
+        <a routerLink="/handmade" routerLinkActive="active">Хенд-мейд</a>
+      </li>
+      <li class="navbar-text">
+        <a routerLink="/art" routerLinkActive="active">Картини</a>
+      </li>
+  </ul>
+
+
+  <ul class="nav-fill" *ngIf="authService.isLogged()">
+    <li class="navbar-text">
+      <a routerLink="/home" routerLinkActive="active">Начало</a>
+    </li>
+    <li class="navbar-text">
+      <a routerLink="/myprofile" routerLinkActive="active">Лаборатория</a>
+    </li>
+    <li class="navbar-text" *ngIf="authService.isAdmin()">
+      <a routerLink="/admin" routerLinkActive="active">Администрация</a>
+    </li>
+    <li class="navbar-text">
+      <a (click)="logout()">Изход</a>
+    </li>
+    <div class="float-right">
+      <li class="navbar-text">
+        <a routerLink="/photography" routerLinkActive="active">Фотография</a>
+      </li>
+      <li class="navbar-text">
+        <a routerLink="/handmade" routerLinkActive="active">Хенд-мейд</a>
+      </li>
+      <li class="navbar-text">
+        <a routerLink="/art" routerLinkActive="active">Картини</a>
+      </li>
+    </div>
+  </ul>
+</nav>
+<div id="content">
+  <router-outlet></router-outlet>
+</div>
+<footer >
+  <p>CopyRight AleksFotev 2017</p>
+</footer>

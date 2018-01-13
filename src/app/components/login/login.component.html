@@ -1,0 +1,36 @@
+<div class="form-group">
+  <form #logForm="ngForm">
+    <div class="group">
+      <label for="username">Потребителско име: </label>
+      <input type="text" 
+      id="username" 
+      name="username" 
+      [(ngModel)]="logData.username" 
+      class="form-control" 
+      maxlength="20"
+      #username="ngModel"
+      pattern='^[A-Za-z0-9]+$'
+       required />
+       <div [hidden]="!username.errors?.pattern" class="alert alert-danger">
+        *Моля, използвайте само букви и цифри!
+       </div>
+    </div>
+   
+    <div class="group">
+      <label for="password">Парола</label>
+      <input
+       type="password"
+        id="password" name="password" 
+        [(ngModel)]="logData.password" 
+        class="form-control" 
+        pattern='^[A-Za-z0-9]+$'
+        required
+        #pass="ngModel"/>
+        <div [hidden]="!pass.errors?.pattern" class="alert alert-danger">
+          *Моля, използвайте само букви и цифри!
+         </div>
+    
+    </div>
+    <input type="Submit" value="Влез" (click)="login()" class="btn" [disabled]="logForm.invalid"/>
+  </form>
+</div>

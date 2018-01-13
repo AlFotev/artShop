@@ -1,0 +1,34 @@
+<div class="wrap">
+  <h1>
+    {{heading}}
+  </h1>
+  <div class="artContent">
+    <img [src]="image" alt="iiimage" /> {{description}}
+  </div>
+  <ul>
+    <li>
+      <span>Създател: {{author}}</span>
+    </li>
+    <li>
+      <span>{{date}}</span>
+    </li>
+    <li>
+        <span>Категория: {{category}}</span>
+      </li>
+      <li>
+        <span>Статус: {{status}}</span>
+      </li>
+      <li *ngIf="authService.isAdmin() && status == 'pending'">
+        <button (click)="approveArtWork($event)">Одобри</button>
+      </li>
+      <li *ngIf="authService.isAdmin() || isAuthor()">
+          <button (click)="deleteArtWork()">Изтрий</button>
+        </li>
+        <li *ngIf="isAuthor()">
+            <button ><a [routerLink]="['/edit', id]">Редактирай</a></button>
+          </li>
+    <li>
+        <a [routerLink]="['/details',id]"><span >Виж повече...</span></a>
+      </li>
+  </ul>
+</div>

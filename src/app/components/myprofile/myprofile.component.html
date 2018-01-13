@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Лабораторията на {{myusername}}</h1>
+  <nav>
+    <ul>
+      <li><a routerLink="/myprofile/myarts">Моите творби</a></li>
+      <li><a routerLink="/myprofile/addart">Добави творение</a></li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+ <!-- <app-artframe *ngFor="let currentArt of shownPages" [currentArt]="currentArt"></app-artframe>-->
+</div>
+
+ <!-- <app-pagination *ngIf="size" [size]="size" (onReacted)="takeCurrentPage($event)"></app-pagination>-->

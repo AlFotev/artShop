@@ -1,0 +1,33 @@
+.wrap{
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid grey;
+    margin: 10px;
+}
+.artContent{
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+}
+span{
+margin:10px;
+}
+p{
+
+}
+h1{
+
+}
+img{
+    width: 235px;
+    padding: 5px;
+    border: 1px solid grey;
+}
+button{
+margin:10px;
+}
+li{
+    display: inline-flex;
+    border-right: 1px solid thistle;
+}
+ 

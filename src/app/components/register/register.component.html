@@ -1,0 +1,108 @@
+<div class="form-group">
+  <form #regForm="ngForm">
+    <div class="group">
+      <label for="username">Потребителско име: </label>
+      <input 
+      type="text"
+       id="username" 
+       name="username" 
+       [(ngModel)]="inputData.username" 
+       class="form-control" 
+       minlength="5"
+       maxlength="20"
+       pattern="^[A-Za-z0-9]+$"
+       required
+       #username="ngModel"/>
+       <div [hidden]="!username.errors?.pattern" class="alert alert-danger">
+        *Моля, използвайте само букви и цифри!
+       </div>
+       <div [hidden]="!username.errors?.minlength" class="alert alert-danger">
+        *Потребителското име трябва да е поне пет символа!
+       </div>
+</div>
+      <div class="group">
+        <label for="e-mail">Е-майл: </label>
+        <input 
+        type="text" 
+        id="email"
+        name="email"
+         [(ngModel)]="inputData.email" 
+         class="form-control" 
+         pattern='^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
+         #email="ngModel"/>
+         <div [hidden]="!email.errors?.pattern" class="alert alert-danger">
+          *Невалиден e-mail
+         </div>
+      </div>
+
+      <div class="group">
+        <label for="firstName">Име: </label>
+        <input 
+        type="text"
+         id="firstName" 
+         name="firstName" 
+         [(ngModel)]="inputData.firstName" 
+         class="form-control"
+         pattern="^[a-zA-ZА-Яа-я]+$"
+         required
+         #firstName="ngModel" />
+         <div [hidden]="!firstName.errors?.pattern" class="alert alert-danger">
+          *Невалиден формат
+         </div>
+      </div>
+
+      <div class="group">
+        <label for="lastName">Фамилия: </label>
+        <input 
+        type="text"
+         id="lastName" 
+         name="lastName" 
+         [(ngModel)]="inputData.lastName" 
+         class="form-control"
+         pattern="^[a-zA-ZА-Яа-я]+$"
+         required
+         #lastName="ngModel" /> 
+         <div [hidden]="!lastName.errors?.pattern" class="alert alert-danger">
+          *Невалиден формат
+         </div>
+        </div>
+
+      <div class="group">
+        <label for="password">Парола</label>
+        <input type="password" 
+        id="password" 
+        name="password" 
+        [(ngModel)]="inputData.password"
+         class="form-control" 
+         minlength="5"
+         maxlength="20"
+         pattern="^[A-Za-z0-9]+$"
+         required
+         #password="ngModel"/>
+         <div [hidden]="!password.errors?.minlength" class="alert alert-danger">
+          *Паролата трябва да е поне 5 символа!
+         </div>
+         <div [hidden]="!password.errors?.pattern" class="alert alert-danger">
+          *Моля, използвайте само букви и цифри!
+         </div>
+      </div>
+
+      <div class="group">
+        <label for="repeat">Повтори парола: </label>
+        <input type="password"
+         id="repeat" 
+         name="repeat"
+          [(ngModel)]="inputData.repeat" 
+          class="form-control" 
+          required
+          #repeat="ngModel"
+          />
+          <div [hidden]="password.value == repeat.value || password.pristine && repeat.pristine"
+          class="alert alert-danger">
+            *Паролите не съвпадат!
+           </div>
+      </div>
+      <input type="Submit" value="Регистрирай ме" (click)="register()" class="btn"
+       [disabled]="regForm.invalid || password.value != repeat.value"/>
+  </form>
+  </div>

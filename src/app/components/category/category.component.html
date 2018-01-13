@@ -1,0 +1,8 @@
+<div class="container">
+  <app-artframe *ngFor="let item of shownPages" [currentArt]="item" (changeDetect)="ngOnInit()"></app-artframe>
+</div>
+
+<app-pagination *ngIf="size" [size]="size" (onReacted)="takeCurrentPage($event)"></app-pagination>
+
+<h2 *ngIf="!shownPages">LOADING...</h2>
+<h2 *ngIf="noitems">Все още няма творби в тази категория</h2>

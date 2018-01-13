@@ -1,0 +1,6 @@
+<app-artframe 
+*ngFor="let currentArt of shownPages" 
+[currentArt]="currentArt"
+ (changeDetect)="ngOnInit()"></app-artframe>
+
+<app-pagination *ngIf="size" [size]="size" (onReacted)="takeCurrentPage($event)"></app-pagination>

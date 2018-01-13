@@ -1,0 +1,26 @@
+*{
+    
+}
+.data{
+    width: 70%;
+    border: 3px solid mediumaquamarine;
+    padding: 15px;
+    text-align: center;
+    margin: 20px;
+    right: 15%;
+    left: 15%;
+    position: relative;
+    top: 20px;
+    bottom: 20px;
+}
+.functionality{
+padding:10px;
+margin: 10px;
+}
+span{
+    padding: 10px;
+    margin: 10px;
+}
+button{
+    margin-right: 50px;
+}

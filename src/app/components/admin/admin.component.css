@@ -1,0 +1,19 @@
+.wrapper{
+margin-top:50px;
+}
+ul{
+
+}
+li{
+    display: inline-block;
+    border-right: 2px solid goldenrod;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+    cursor:pointer;
+    color:black;
+}
+nav{
+    text-align: center;
+}

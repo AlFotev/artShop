@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="/admin/pending">Изчкаващи творби</a>
+      </li>
+      <li>
+        <a routerLink="/admin/approved">Одобрени творби</a>
+      </li>
+      <li>
+        <a routerLink="/admin/special">Админ потребители</a>
+      </li>
+      <li>
+        <a routerLink="/admin/commonusers">Обикновени потребители</a>
+      </li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+<!-- <div *ngIf="users">
+    <app-user  *ngFor="let user of users" [userData]="user"></app-user>
+  </div>
+
+  <app-artframe 
+  *ngFor="let currentArt of shownPages" 
+  [currentArt]="currentArt"
+   (changeDetect)="getPendingArtWorks()"></app-artframe>
+
+  <app-pagination *ngIf="size" [size]="size" (onReacted)="takeCurrentPage($event)"></app-pagination>
+</div>-->

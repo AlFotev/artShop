@@ -1,0 +1,37 @@
+<div class="form-group">
+  <form #artForm="ngForm">
+    <div class="group">
+      <label for="heading">Заглавие на вашата творба: </label>
+      <input type="text" id="heading" name="heading" [(ngModel)]="inputData.heading" class="form-control" maxlength="20" pattern="^[a-zA-ZА-Яа-я ]+$"
+        required #heading="ngModel" />
+      <div [hidden]="!heading.errors?.pattern" class="alert alert-danger">
+        *Моля, използвайте само букви!
+      </div>
+    </div>
+    <div class="group">
+      <label for="description">Описание на творбата: </label>
+      <input type="text" id="description" name="description" [(ngModel)]="inputData.description" class="form-control" pattern="^[a-zA-ZА-Яа-я.,! ?-]+$"
+        #description="ngModel" />
+      <div [hidden]="!description.errors?.pattern" class="alert alert-danger">
+        *Използвате забранени символи !!!
+      </div>
+    </div>
+
+    <div class="group">
+      <label for="image">Линк към снимката на творбата </label>
+      <input type="text" id="image" name="image" [(ngModel)]="inputData.image" class="form-control" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
+         required #image="ngModel" />
+      <div [hidden]="!image.errors?.pattern" class="alert alert-danger">
+        *Невалиден формат
+      </div>
+    </div>
+
+    <div class="group">
+      <label for="category">Изберете категория:</label>
+      <select id="category" name="category" [(ngModel)]="inputData.category" #category="ngModel" required>
+          <option *ngFor="let c of allCategorys; let i = index" [value]="c">{{c}}</option>
+        </select>
+    </div>
+<input type="Submit" value="Добави творба" (click)="addArt()" class="btn" [disabled]="artForm.invalid"/>
+</form>
+</div>
